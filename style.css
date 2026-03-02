@@ -33,11 +33,36 @@ body {
     column-gap: 2%;
 }
 button{
-    padding: 6%;
+    padding: 7%;
     font-size: 1.5rem;
     border: none;
     border-radius: 20%;
     cursor: pointer;
     background-color: rgb(20, 29, 34);
     color: antiquewhite;
+}
+.specialKey{
+    background-color: rgb(255, 140, 0);
+    color: white;
+}
+.functionKey{
+    background-color: rgb(255, 69, 0);
+    color: white;
+}
+.abnormar{
+    grid-column: span 2;
+}
+#multiplier {
+    font-size: 0; /* Hide the actual '*' text */
+}
+
+#multiplier::before {
+    content: "×"; /* Show the pretty symbol */
+    font-size: 1.5rem;
+}
+
+/* Highlight the Equal Button */
+#buttons .specialKey#equal {
+    background-color: #00ff88;
+    color: #222;
 }
