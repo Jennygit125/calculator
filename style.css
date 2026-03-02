@@ -11,47 +11,69 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
-.container{
+.container {
     background-color: black;
-    padding: 4%;
-    border-radius: 10%;
+    padding: 20px;
+    border-radius: 30px;
+    width: 95vw;
+    max-width: 360px; 
+    height: auto;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-#inputOutput{
+
+#inputOutput {
     width: 100%;
-    font-size: 3.5rem;
+    /* clamp(min, preferred, max) - magic for mobile text */
+    font-size: clamp(2rem, 15vw, 4rem); 
     text-align: end;
-    background: none;
     color: antiquewhite;
     word-wrap: break-word;
     word-break: break-all;
-    outline: none;
+    min-height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10px 5px;
 }
-#buttons{
+
+#buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 3%;
-    column-gap: 2%;
+    /*'gap' instead of margins for cleaner spacing */
+    gap: clamp(8px, 2vw, 15px); 
 }
-button{
-    padding: 7%;
-    font-size: 1.5rem;
+
+button {
+    /*REMOVEpadding:;
+    7%.Thiswasthe'shrinking'culprit.*/width: 100%;
+    aspect-ratio: 1 / 1;
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
     border: none;
-    border-radius: 20%;
+    border-radius: 50%;
     cursor: pointer;
     background-color: rgb(20, 29, 34);
     color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s;
 }
-.specialKey{
-    background-color: rgb(255, 140, 0);
-    color: white;
-}
-.functionKey{
-    background-color: rgb(255, 69, 0);
-    color: white;
-}
-.abnormar{
+
+
+.abnormar {
     grid-column: span 2;
+    aspect-ratio: auto; 
+    border-radius: 50px; /* Pill shape */
+    height: 100%;
 }
+
+button:active {
+    background-color: #444; /* Immediate feedback for touch screens */
+}
+
 #multiplier {
     font-size: 0; /* Hide the actual '*' text */
 }
